@@ -172,22 +172,6 @@ const App: React.FC = () => {
     }
   };
 
-  const handleDeleteRocket = async () => {
-    try {
-      if (rocketId) {
-        await axios.delete(
-          `https://backend-rocket-1.onrender.com/rocket/${rocketId}`
-        );
-        setRocketExists(false);
-        setPosition(null);
-        setRocketId(null);
-      }
-    } catch (error) {
-      console.error('Erro ao deletar o foguete: ', error);
-      setError('Erro ao deletar o foguete.');
-    }
-  };
-
   return (
     <div className="App">
       <h1>Rocket Game</h1>
